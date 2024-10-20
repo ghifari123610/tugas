@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesin Penjual Otomatis</title>
+</head>
+<body>
+    <h1>Mesin Penjual Otomatis</h1>
+    <script>
+        // Daftar produk dan harganya
+        const produk = {
+            1: { nama: "Air Mineral", harga: 3000 },
+            2: { nama: "Kopi", harga: 5000 },
+            3: { nama: "Teh", harga: 4000 }
+        };
+
+        function mesinPenjualOtomatis() {
+            alert("Selamat datang di mesin penjual otomatis!");
+
+            // Menampilkan pilihan produk
+            let pilihanProduk = "Pilihan produk:\n";
+            for (let key in produk) {
+                pilihanProduk += `${key}. ${produk[key].nama} (Rp ${produk[key].harga})\n`;
+            }
+            alert(pilihanProduk);
+
+            // Minta pengguna memasukkan uang
+            let uang = parseInt(prompt("Masukkan jumlah uang Anda (Rp): "));
+
+            // Minta pengguna memilih produk
+            let pilihan = parseInt(prompt("Pilih produk (1-3): "));
+
+            // Validasi pilihan produk
+            if (produk[pilihan]) {
+                const hargaProduk = produk[pilihan].harga;
+
+                // Cek apakah uang cukup
+                if (uang >= hargaProduk) {
+                    let kembalian = uang - hargaProduk;
+                    alert(`Selamat! Anda mendapatkan ${produk[pilihan].nama}.\nKembalian Anda: Rp ${kembalian}`);
+                } else {
+                    alert("Uang Anda tidak cukup untuk membeli produk ini.");
+                }
+            } else {
+                alert("Pilihan produk tidak valid.");
+            }
+        }
+
+        // Jalankan mesin penjual otomatis
+        mesinPenjualOtomatis();
+    </script>
+</body>
+</html>

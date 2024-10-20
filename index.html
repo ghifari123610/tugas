@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cek Bilangan</title>
+    <script>
+        function cekBilangan() {
+            let input = prompt("Masukkan sebuah angka:");
+
+            // Memeriksa apakah input adalah angka
+            if (isNaN(input) || input.trim() === "") {
+                alert("kasih masuk angka wee.");
+                return;
+            }
+
+            let angka = parseInt(input);
+
+            // Memeriksa apakah angka genap atau ganjil
+            if (angka % 2 === 0) {
+                alert("genap.");
+            } else {
+                alert("ganjil.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Cek khodam</h1>
+    <button onclick="cekBilangan()">Cek Angka</button>
+</body>
+</html>
